@@ -1,0 +1,31 @@
+//font
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+
+$Quicksand: 'Quicksand', sans-serif;
+$Questrial: 'Questrial', sans-serif;
+$Didact: 'Didact', sans-serif;
+
+
+//color
+
+//day-theme
+$light-primary:#F5F5F5;
+$light-accent:#FF6A3C;
+$light-gradient:linear-gradient(180deg, #FF6A3C -13%, #FFE392 121.5%);
+$light-subtext:#6D6D6D;
+$light-card: #FFECE5;
+
+//night-theme
+$dark-primary:#353F59;
+$dark-accent:#98EFEF;
+$dark-gradient: linear-gradient(180deg, #98EFEF -13%, #CBEFD1 121.5%);
+$dark-subtext:#F8F8F8;
+$dark-card: #262D40;
+
+
+
+
+

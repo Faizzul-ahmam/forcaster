@@ -1,0 +1,238 @@
+@import 'variables';
+@import 'mixin';
+
+
+//element tag
+html{
+    
+    font-family: $Quicksand;
+    --bg-color: #{$light-primary};
+    --subtext-color:#{$light-subtext};
+    --gradient-color: #{$light-gradient};
+    --title-color: #{$light-accent};
+    --card-color: #{$light-card};
+    --accent-color:#{$light-accent};
+
+}
+html[data-theme='dark']{
+    --bg-color: #{$dark-primary};
+    --subtext-color:#{$dark-subtext};
+    --gradient-color: #{$dark-gradient};
+    --title-color: #{$dark-accent};
+    --card-color: #{$dark-card};
+    --accent-color:#{$dark-accent};
+}
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+body{
+    background-color: var(--bg-color);
+}
+
+h1{
+    margin:0;
+    font-size:80px;
+    font-weight: 700;
+    @include gradient-text;
+}   
+h2{
+    color: var(--title-color);
+    font-size:36px;
+    margin:0;
+}
+h3{
+    color: var(--title-color);
+    margin:0;
+}
+h4{
+    color: var(--title-color);
+    font-weight: 400;
+    font-size: 28px;
+    margin:0;
+}
+h5{
+    color: var(--subtext-color);
+    font-weight: 400;
+    font-size: 18px;
+    margin:0;
+}
+h6{
+    color: var(--title-color);
+    margin:0;
+}
+
+p{
+    color: var(--subtext-color);
+    margin:0;
+}
+a{
+    text-decoration: unset;
+}
+
+img{
+    opacity: 1;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+  input[type='text']{
+    border-radius: 10px;
+    width: 100%;
+    font-family: inherit;
+    font-weight: 400;
+    border:1px solid transparent;
+    outline:none;
+    height: 40px;
+    transition: border 0.4s;
+    &:focus{
+        transition: border 0.4s;
+        outline:none;
+        border:1px solid var(--accent-color);
+    }
+    &:hover{
+        transition: border 0.4s;
+        border:1px solid var(--accent-color);
+
+    }
+    
+}
+
+footer{
+    border-top: 0.01em solid #e5e5e5ad;
+    color:var(--bg-color);
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 5vh 0;
+    a{
+        color:var(--accent-color);
+        text-decoration: none;
+    }
+}
+
+//Class
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.navbar{
+    height: 60px;
+    padding:0 70px;
+    a{
+        align-self: center;
+    }
+}
+.search-bar{
+    @include padding-page;
+}
+.flex{
+
+    display: flex;
+}
+.between{
+    justify-content: space-between;
+}
+.theme-icon{
+    &:hover{
+        cursor: pointer;
+    }
+}
+.weather-container{
+    height: 50vh;
+}
+.weather-icon{
+    justify-self: end;
+}
+.card{
+    background-color: var(--card-color);
+    padding:30px 40px;
+    border-radius: 30px;
+
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+.padding-page{
+    @include padding-page;
+}
+.card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    @include padding-page;
+    align-items: start;
+}
+.wrap{
+    display: grid;
+}
+.one-half{
+    grid-template-columns: 1fr 1fr;
+    row-gap: minmax(auto 100vh);
+}
+
+.self-mid{
+    justify-self: center;
+    align-self: center;
+}
+.align-mid{
+    align-self: center;
+}
+.row-mid{
+    align-items: center;
+}
+.col-mid{
+    justify-items: center;
+}
+.gradient-text{
+    @include gradient-text;
+}
+
+.spinner{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.autocomplete-results {
+    background-color: var(--card-color);
+    border-radius: 5px;
+    position: absolute;
+    width: inherit;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #eeeeee;
+    height: auto;
+    overflow: auto;
+
+  }
+
+  .autocomplete-result {
+    list-style: none;
+    text-align: left;
+    padding: 4px 2px;
+    cursor: pointer;
+    color:var(--accent-color);
+    transition: background-color 0.2s ,color 0.2s;
+    &:hover{
+        transition: background-color 0.2s,color 0.2s;
+        background-color:var(--accent-color);
+        color: var(--card-color);
+    }
+  }
