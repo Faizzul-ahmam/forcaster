@@ -14,6 +14,7 @@ export default {
                 q:string,
                 limit:5,
                 place:'city,town',
+                normalizecity:1,
                 dedupe:1
             }
         });

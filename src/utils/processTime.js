@@ -3,7 +3,7 @@ import {useStore} from 'vuex'
 import {computed} from 'vue'
 
 const store = useStore()
-const times = computed(() =>store.getters.currentLocationTime)
+const times = () =>store.getters.currentLocationTime
 const current_time = computed(() => times.current)
 const sunset_time = computed(() => times.sunset)
 const sunrise_time = computed(() => times.sunrise)

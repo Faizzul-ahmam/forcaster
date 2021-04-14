@@ -101,8 +101,8 @@ export default createStore({
             console.log('Api err: '+err)
             fail(err)
           })
-
-          this.dispatch('setTheme',Helper.time.checkTime() == 'day'?'light':'dark')
+          //set Theme
+          // this.dispatch('setTheme',Helper.time.checkTime() == 'day'?'light':'dark')
           
         })
       },

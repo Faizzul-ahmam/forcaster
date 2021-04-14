@@ -1,6 +1,7 @@
 <template>
 <footer>
-  <p>© 2020 Forecaster | <a href="https://faizzul.com/" target="_blank">Made by Faizzul</a></p>
+  <p>© {{year}} Forecaster | <a href="https://faizzul.com/" target="_blank">Made by Faizzul</a> | <a href="https://locationiq.com/" target="_blank">Location Iq</a></p>
+  <!-- <p>Data by </p> -->
 </footer>
 </template>
 
@@ -10,6 +11,9 @@ export default {
   components:{},
   setup(){
 
+    const year = new Date().getFullYear();
+
+    return{year}
   }    
 }
 </script>

@@ -12,7 +12,8 @@ html{
     --title-color: #{$light-accent};
     --card-color: #{$light-card};
     --accent-color:#{$light-accent};
-
+    --card-shadow:#{$light-card-shadow};
+    
 }
 html[data-theme='dark']{
     --bg-color: #{$dark-primary};
@@ -21,6 +22,7 @@ html[data-theme='dark']{
     --title-color: #{$dark-accent};
     --card-color: #{$dark-card};
     --accent-color:#{$dark-accent};
+    --card-shadow:#{$dark-card-shadow};
 }
 html.transition,
 html.transition *,
@@ -96,6 +98,7 @@ img{
     outline:none;
     height: 40px;
     transition: border 0.4s;
+    padding-left: 5px;
     &:focus{
         transition: border 0.4s;
         outline:none;
@@ -152,6 +155,10 @@ footer{
 }
 .weather-container{
     height: 50vh;
+
+    @media screen and (max-width: 769px){
+        @include padding-page;
+    }
 }
 .weather-icon{
     justify-self: end;
@@ -160,7 +167,7 @@ footer{
     background-color: var(--card-color);
     padding:30px 40px;
     border-radius: 30px;
-
+    box-shadow: 10px 10px 20px rgba(var(--card-shadow));
 }
 ::-webkit-scrollbar {
     width: 0px;
@@ -169,6 +176,10 @@ footer{
 .padding-page{
     @include padding-page;
 }
+
+.padd-top{
+    padding-top:30px;
+}
 .card-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -176,7 +187,13 @@ footer{
     overflow-y: hidden;
     overflow-x: scroll;
     @include padding-page;
+    padding-bottom: 40px;
     align-items: start;
+    
+    h5{
+        padding-top:30px;
+     }
+
 }
 .wrap{
     display: grid;
@@ -226,7 +243,7 @@ footer{
   .autocomplete-result {
     list-style: none;
     text-align: left;
-    padding: 4px 2px;
+    padding: 10px 5px 0 5px;
     cursor: pointer;
     color:var(--accent-color);
     transition: background-color 0.2s ,color 0.2s;

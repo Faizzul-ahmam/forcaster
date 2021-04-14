@@ -1,5 +1,5 @@
 <template>
-  <div class="flex between navbar">
+  <div class="padding-page flex between navbar">
       <a href="#"><h4>Forecaster</h4></a>
       <ThemeToggle :v-if="isThemeAvailable"/>
   </div>

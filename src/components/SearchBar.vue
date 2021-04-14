@@ -8,7 +8,7 @@
     <li class="autocomplete-result" 
     v-for="(list,i) in locationList" 
     :key="i" 
-    @click="getWeather({longitude:list.lon,latitude:list.lat})">{{list.display_place}} <p>{{list.display_name}}</p></li>
+    @click="getWeather({longitude:list.lon,latitude:list.lat})">{{list.address.city || list.address.town || list.display_place}} <p>{{list.display_name}}</p></li>
   </ul>
 </div>
 </template>

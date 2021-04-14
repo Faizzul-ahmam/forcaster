@@ -1,6 +1,6 @@
 <template>
     <div class="padding-page">
-        <h2>{{ region.city || region.town || region.village}}</h2>
+        <h2 class="padd-top">{{ region.city || region.town || region.village}}</h2>
         <h5>{{DateTimeNow(weatherInfo.timezone)}}</h5>
     </div>
     <div class="wrap one-half row-mid weather-container">
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="self-mid">
-            Graph
+            <!-- Graph -->
         </div>
     </div> 
     <div class="card-container">
